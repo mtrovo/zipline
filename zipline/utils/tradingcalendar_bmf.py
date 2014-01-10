@@ -274,9 +274,9 @@ def get_open_and_closes(trading_days, early_closes):
     open_and_closes = pd.DataFrame(index=trading_days,
                                    columns=('market_open', 'market_close'))
     for day in trading_days:
-        # only "early close" event in Bovespa actually is a late start 
-        # as the market only opens at 1pm 
-        open_hour=13 if day in quarta_cinzas else 10
+        # only "early close" event in Bovespa actually is a late start
+        # as the market only opens at 1pm
+        open_hour = 13 if day in quarta_cinzas else 10
         market_open = pd.Timestamp(
             datetime(
                 year=day.year,
